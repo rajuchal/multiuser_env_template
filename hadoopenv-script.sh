@@ -23,9 +23,9 @@ echo "------------------- # Creating Installation directory  -------------------
 sudo mkdir -p /app/bigdata
 sudo chown -R $adminuser_name:$adminuser_name /app
 
-wget https://github.com/rajuchal/cloud_env_template/archive/master.zip
+wget https://github.com/rajuchal/multiuser_env_template/archive/master.zip
 unzip master.zip
-cd cloud_env_template-master/
+cd multiuser_env_template-master/
 
 echo "------------------- # Starting Installation  ------------------------"
 sh install-common.sh $adminuser_name
