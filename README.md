@@ -1,74 +1,72 @@
-#  Azure Resource Manager(ARM) Template & Automation Script for 
-#  Single Node Hadoop/Spark/Kafka/Cassandra Cluster with Windows VM Gateway
-Template & Automation Script for creating single node hadoop/spark/kafka/cassanda/mongodb cluster in Azure
+##  Azure Resource Manager(ARM) Template & Automation Script for Multi-user environment
+###  Single Node _Hadoop/Spark/HBase/Kafka/Cassandra/MongoDB_ Cluster with Windows VM Gateway
 
-# Installation Guide
+Template & Automation Script for creating single node _hadoop/spark/kafka/cassanda/mongodb_ cluster in Azure
 
-DOWNLOAD THE POWER SHELL SCRIPT
--------------------------------
+### Note :- To run this script you should have proper Rights & Permissions to create resources in Azure 
 
-PS /home/USER_NAME/testscript> wget https://raw.githubusercontent.com/rajuchal/cloud_env_template/master/create-single-env.ps1
+## Connection architecture
 
-DOWNLOAD THE ARM TEMPLATE FILE
--------------------------------
-PS /home/USER_NAME/testscript> wget  https://raw.githubusercontent.com/rajuchal/cloud_env_template/master/single-env-template.json
+**Client Desktop/Laptop --> RDP Connection --> Azure Windows VM --> SSH Connection --> Azure Linux VM**
 
-PS /home/USER_NAME/testscript> dir
+## Functions of the template & script -
+1. Create single instance Windows VM for Client log-in using RDP connection
+2. Download SSH clients into Windows VM
+3. Create single instance Linux VM for Client log-in using SSH connection from Windows VM
+4. Install Hadoop stack, Spark, Kafka, Cassandra, MongoDB into Linux VM
 
+## Installation Guide
 
-Directory: /home/USER_NAME/testscript
+1. Open Azure Portal   [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/)
 
-Mode                 LastWriteTime         Length Name
-----                 -------------         ------ ----
------           8/24/2020 11:56 AM          82309 create-single-env.ps1
------           8/24/2020 11:57 AM         312983 single-env-template.json
+2. Open Power Shell in Aazure Portal
+3. Download the Power shell script 
 
+    ##### wget https://raw.githubusercontent.com/rajuchal/multiuser_env_template/master/template-script/create-multiuser-env.ps1
 
-Template Location - /home/USER_NAME/testscript/single-env-template.json
+4. Download the ARM template file & template parameter file
 
+    ##### wget  https://raw.githubusercontent.com/rajuchal/multiuser_env_template/master/template-script/multiuser-multinsg-template.json
+    
+    #### wget https://raw.githubusercontent.com/rajuchal/multiuser_env_template/master/template-script/multiuser.parameters.json
+    ##### dir
 
-RUN THE SCRIPT
---------------------
+    ##### Check the template file "multiuser-multinsg-template.json" location
 
-PS /home/<USER NAME>/testscript> ./create-single-env.ps1
+5. Run the Power shell script
 
-Enter the same project name: lkm_dna_env
-Enter the administrator User name: azureuser
-Enter the administrator password: *************
-Enter the full path of template file location: /home/<USER NAME>/testscript/single-env-template.json
+    ##### PS/home/USER_NAME/testscript>./create-single-env.ps1
+        Enter the same project name: lkm_dna_env
+        Enter the administrator User name: azureuser
+        Enter the administrator password: *************
+        Enter the full path of template file location: /home/USER_NAME/testscript/single-env-template.json
 
-Check the location for Windows Tools (SSH Clients & Browser)
-------------------------------------------------------------
-C:\windowsTools
+6. After script execution completed, Connect Windows VM using RDP
+7. Check the location "C:\windowsTools" for Windows Tools (SSH Clients & Browser)
+   - Unzip MobaXTerm or SmarTTY
+   - Connect with Linux VM using SSH connection
+   - IP Address for Linux VM - 10.1.2.4
+   - Use same User Name & Password of Windows for Linux VM Log-in 
 
-Unzip MobaXTerm or SmarTTY
-Connect with Linux VM using SSH connection
-IP Address for Linux VM - 10.1.2.4
-Use same User Name & Password of Windows for Linux VM Log-in 
+8. Start Hadoop Services in Linux VM
+    ##### $ start-dfs.sh
+    ##### $ start-yarn.sh
 
-Start Hadoop Services in Linux VM
-----------------------------------
-$ start-dfs.sh
-$ start-yarn.sh
+9. Start Spark Services in Linux VM
+    ##### $ start-master.sh
+    ##### $ start-slaves.sh
 
-Start Spark Services in Linux VM
-----------------------------------
-$ start-master.sh
-$ start-slaves.sh
+10. Start Spark(Scala/Java) Shell  in Linux VM
 
-Start Spark(Scala/Java) Shell  in Linux VM
---------------------------------------------
-$ spark-shell --master spark://localhost:7077
+    ##### $ spark-shell --master spark://localhost:7077
 
-Start Spark(Python) Shell  in Linux VM
-------------------------------------------
-$ pyspark --master spark://localhost:7077
+11. Start Spark(Python) Shell  in Linux VM
 
-Start Hive  in Linux VM
-----------------------------------------------
-$ hive
+    ##### $ pyspark --master spark://localhost:7077
 
+12. Start Hive  in Linux VM
 
-# Happy Clustering
+    ##### $ hive
 
 
+:+1: **_Happy Clustering in Azure_** :shipit:
