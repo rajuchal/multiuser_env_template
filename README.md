@@ -41,7 +41,7 @@ Template & Automation Script for creating single node _hadoop/spark/kafka/cassan
         Enter the full path of template file location: ./multiuser-multinsg-template.json
         Enter the full path of parameter file location: multiuser.parameters.json
         Enter the number of Users: 3
-        
+                
 6. After script execution completed, Connect Windows VM using RDP
 7. Check the location "C:\windowsTools" for Windows Tools (SSH Clients & Browser)
    - Unzip MobaXTerm or SmarTTY
