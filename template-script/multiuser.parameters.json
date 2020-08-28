@@ -1,0 +1,36 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "adminUsername": {
+      "value": "azureuser"
+    },
+    "adminPassword": {
+      "value": "Password@1234"
+    },
+    "virtualNetworks_LKM_DNA_ENV_VNet_name": {
+      "value": "LKM-DNA-ENV-VNet"
+    },
+    "windowsOSVersion": {
+      "value": "2012-R2-Datacenter"
+    },
+	"ubuntuLinuxOSVersion": {
+      "value": "18.04-LTS"
+    },
+    "linuxVMSize": {
+      "value": "Standard_D2s_v3"
+    },
+	"windowsVMSize": {
+      "value": "Standard_D2s_v3"
+    },
+    "scriptLocation": {
+      "value": "https://raw.githubusercontent.com/rajuchal/multiuser_env_template/master/"
+    },
+    "no_of_win_vm": {
+      "value": 2
+    },
+    "no_of_linux_vm": {
+      "value": 2
+    }
+  }
+}
