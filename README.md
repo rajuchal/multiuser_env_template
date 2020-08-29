@@ -37,14 +37,14 @@ Template & Automation Script for creating single node _hadoop/spark/kafka/cassan
 5. Run the Power shell script
 
     ##### PS/home/USER_NAME>./create-multiuser-env.ps1
-        *Example*
+         **Example**
          Enter the same project name: lkm_dna_env
          Enter the full path of template file location: ./multiuser-multinsg-template.json
-         Enter the full path of parameter file location: multiuser.parameters.json
+         Enter the full path of parameter file location: ./multiuser.parameters.json
          Enter the number of Users: 3
         
 6. After script execution completed, Connect Windows VM using RDP
-7. Check the location "C:\windowsTools" for Windows Tools (SSH Clients & Browser)
+7. Check the location *"C:\windowsTools"* for Windows Tools (SSH Clients & Browser)
    - Unzip MobaXTerm or SmarTTY
    - Connect with Linux VM using SSH connection
    - IP Address for Linux VM - 10.1.2.4
@@ -70,5 +70,9 @@ Template & Automation Script for creating single node _hadoop/spark/kafka/cassan
 
     ##### $ hive
 
+###*Note-*
+### Installation directory in Linux VM - /app/bigdata
+### Default user name for Windows & Linux VM - azureuser
+### Default password for Windows & Linux VM - Password@1234
 
 :+1: **_Happy Clustering in Azure_** :shipit:
