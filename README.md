@@ -70,9 +70,9 @@ Template & Automation Script for creating single node _hadoop/spark/kafka/cassan
 
     ##### $ hive
 
-###*Note-*
-### Installation directory in Linux VM - /app/bigdata
-### Default user name for Windows & Linux VM - azureuser
-### Default password for Windows & Linux VM - Password@1234
+### *Note-*
+#### Installation directory in Linux VM - /app/bigdata
+#### Default user name for Windows & Linux VM - azureuser
+#### Default password for Windows & Linux VM - Password@1234
 
 :+1: **_Happy Clustering in Azure_** :shipit:
