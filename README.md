@@ -22,26 +22,28 @@ Template & Automation Script for creating single node _hadoop/spark/kafka/cassan
 2. Open Power Shell in Aazure Portal
 3. Download the Power shell script 
 
-    ##### wget https://raw.githubusercontent.com/rajuchal/multiuser_env_template/master/template-script/create-multiuser-env.ps1
+    #### wget https://raw.githubusercontent.com/rajuchal/multiuser_env_template/master/template-script/create-multiuser-env.ps1
 
 4. Download the ARM template file & template parameter file
 
-    ##### wget  https://raw.githubusercontent.com/rajuchal/multiuser_env_template/master/template-script/multiuser-multinsg-template.json
+    #### wget  https://raw.githubusercontent.com/rajuchal/multiuser_env_template/master/template-script/multiuser-multinsg-template.json
     
-    ##### wget https://raw.githubusercontent.com/rajuchal/multiuser_env_template/master/template-script/multiuser.parameters.json
-    ##### dir
+    #### wget https://raw.githubusercontent.com/rajuchal/multiuser_env_template/master/template-script/multiuser.parameters.json
+    #### dir
 
     ##### Check the template file "multiuser-multinsg-template.json" location
+    ##### Check the parameter file "multiuser.parameters.json" location
 
 5. Run the Power shell script
 
-    ##### PS/home/USER_NAME/testscript>./create-multiuser-env.ps1
-    *EXAMPLE*
+    ##### PS/home/USER_NAME>./create-multiuser-env.ps1
+    
+    *Example*
         Enter the same project name: lkm_dna_env
         Enter the full path of template file location: ./multiuser-multinsg-template.json
         Enter the full path of parameter file location: multiuser.parameters.json
         Enter the number of Users: 3
-                
+        
 6. After script execution completed, Connect Windows VM using RDP
 7. Check the location "C:\windowsTools" for Windows Tools (SSH Clients & Browser)
    - Unzip MobaXTerm or SmarTTY
